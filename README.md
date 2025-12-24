@@ -45,38 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-concat1d
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-concat1d = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var concat1d = require( 'path/to/vendor/umd/ndarray-concat1d/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.concat1d;
-})();
-</script>
+var concat1d = require( '@stdlib/ndarray-concat1d' );
 ```
 
 #### concat1d( ...arrays )
@@ -85,16 +79,12 @@ Returns a one-dimensional [ndarray][@stdlib/ndarray/ctor] formed by concatenatin
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ -1.0, 2.0, 3.0, 4.0 ] );
 var y = array( [ -5.0, 6.0, -7.0, -8.0, 9.0, -10.0 ] );
 
 var out = concat1d( x, y );
-// returns <ndarray>
-
-var arr = ndarray2array( out );
-// returns [ -1.0, 2.0, 3.0, 4.0, -5.0, 6.0, -7.0, -8.0, 9.0, -10.0 ]
+// returns <ndarray>[ -1.0, 2.0, 3.0, 4.0, -5.0, 6.0, -7.0, -8.0, 9.0, -10.0 ]
 ```
 
 The function accepts the following arguments:
@@ -110,20 +100,16 @@ Concatenates provided input arguments and assigns the result to a provided one-d
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var zeros = require( '@stdlib/ndarray-zeros' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ -1.0, 2.0, 3.0, 4.0 ] );
 var y = array( [ -5.0, 6.0, -7.0, -8.0 ] );
 var z = zeros( [ 8 ] );
 
 var out = concat1d.assign( x, y, z );
-// returns <ndarray>
+// returns <ndarray>[ -1.0, 2.0, 3.0, 4.0, -5.0, 6.0, -7.0, -8.0 ]
 
 var bool = ( out === z );
 // returns true
-
-var arr = ndarray2array( z );
-// returns [ -1.0, 2.0, 3.0, 4.0, -5.0, 6.0, -7.0, -8.0 ]
 ```
 
 The function accepts the following arguments:
@@ -149,16 +135,11 @@ The function accepts the following arguments:
 
 ## Examples
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var array = require( '@stdlib/ndarray-array' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var concat1d = require( '@stdlib/ndarray-concat1d' );
 
 var opts = {
     'dtype': 'generic'
@@ -171,11 +152,6 @@ console.log( ndarray2array( y ) );
 
 var out = concat1d( x, y );
 console.log( ndarray2array( out ) );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -250,8 +226,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -270,13 +246,13 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-concat1d/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders/tree/umd
+[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders
 
-[@stdlib/ndarray/defaults]: https://github.com/stdlib-js/ndarray-defaults/tree/umd
+[@stdlib/ndarray/defaults]: https://github.com/stdlib-js/ndarray-defaults
 
-[@stdlib/ndarray/promotion-rules]: https://github.com/stdlib-js/ndarray-promotion-rules/tree/umd
+[@stdlib/ndarray/promotion-rules]: https://github.com/stdlib-js/ndarray-promotion-rules
 
 </section>
 
