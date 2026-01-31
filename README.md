@@ -52,13 +52,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import concat1d from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@deno/mod.js';
+import concat1d from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@deno/mod.js';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@v0.1.0-deno/mod.js';
 ```
 
 #### concat1d( ...arrays )
@@ -127,7 +127,7 @@ The function accepts the following arguments:
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
 import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import concat1d from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@deno/mod.js';
+import concat1d from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-concat1d@v0.1.0-deno/mod.js';
 
 var opts = {
     'dtype': 'generic'
